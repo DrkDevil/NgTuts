@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+      <button class="btn btn-success">New Recipe</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <a href="#"
+       class="list-group-item clearfix"
+       *ngFor="let recipeList of recipes">
+      <div style="float:left">
+        <h4 class="list-group-item-heading">{{recipeList.name}}</h4>
+        <p class="list-group-item-text">{{recipeList.description}}</p>
+      </div>
+      <span style="float:right">
+        <!-- property binding examples below -->
+        <img
+          [src]="recipeList.imagePath"
+          [alt]="recipeList.name"
+          class="img-responsive"
+          style="
+           height: 75px;
+           border-radius: 50%;
+          "
+        >
+      </span>
+    </a>
+    <app-recipes-item></app-recipes-item>
+  </div>
+</div>
+<app-recipes-item></app-recipes-item>
