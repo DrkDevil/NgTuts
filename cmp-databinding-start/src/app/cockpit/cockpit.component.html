@@ -2,7 +2,10 @@
   <div class="col-xs-12">
     <p>Add new Servers or blueprints!</p>
     <label>Server Name</label>
+    <!-- Removed two way binding exampleserverNameInput -->
     <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+    <!-- ------------------------------------------ -->
+    <!-- local reference on element binding -->
     <input type="text"
       class="form-control"
       [(ngModel)]="newServerName"
@@ -11,11 +14,12 @@
     <label>Server Content</label>
     <input type="text" class="form-control" [(ngModel)]="newServerContent">
     <br>
+    <!-- pass local reference as argument (only gives us the element with all its properties)-->
     <button
       class="btn btn-primary"
       (click)="onAddServer(serverNameInput)">Add Server</button>
     <button
       class="btn btn-primary"
-      (click)="onAddBlueprint()">Add Server Blueprint</button>
+      (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
   </div>
 </div>

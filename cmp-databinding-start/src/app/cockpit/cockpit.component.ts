@@ -6,7 +6,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
-  newServerName = '';
+  // newServerName = '';
   newServerContent = '';
   constructor() { }
   // Make properties events (<> = generic type)  () to call constructor of emitter
@@ -16,17 +16,20 @@ export class CockpitComponent implements OnInit {
 
   ngOnInit() {
   }
-  onAddServer() {
+
+  // Using Local Reference
+  onAddServer(serverNameInput: HTMLInputElement) {
+    console.log(serverNameInput.value);
     // use sever created and emit method
     this.serverCreated.emit({
-      serverName: this.newServerName,
+      serverName: serverNameInput.value,
       serverContent: this.newServerContent
     });
   }
 
-  onAddBlueprint() {
+  onAddBlueprint(serverNameInput: HTMLInputElement) {
     this.blueprintCreated.emit({
-      serverName: this.newServerName,
+      serverName: serverNameInput.value,
       serverContent: this.newServerContent
     });
   }
